@@ -52,6 +52,7 @@
         <asp:Table ID="tblRubrics" CssClass="table" runat="server" border="1"  Height="60px" Width="991px">
             <asp:TableRow>
                 <asp:TableHeaderCell> Rubric Title</asp:TableHeaderCell>
+                 <asp:TableHeaderCell> Rubric Type  </asp:TableHeaderCell>
                 <asp:TableHeaderCell> Action  </asp:TableHeaderCell>
             </asp:TableRow>
         </asp:Table>

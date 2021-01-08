@@ -31,7 +31,7 @@ namespace E_Rubric_System.UI
                 if (coursework.getRubricID() != -1)
                 {
                     Rubric rubric = rh.getRubric(coursework.getRubricID());
-                    lblRubricAttached.Text = rubric.getRubricName();
+                    lblRubricAttached.Text = rubric.rubricName;
                 }
                  initRubricList();
         }
@@ -53,17 +53,17 @@ namespace E_Rubric_System.UI
                 TableCell tc3 = new TableCell();
                 Button btnView = new Button();
                 Button btnSelect = new Button();
-                tc1.Text = rubric.getRubricName();
+                tc1.Text = rubric.rubricName;
 
                 btnView.Text = "View";
                 //   btnView.Click += openRubricDetailPage;
-                btnView.OnClientClick = "window.open('RubricDetailPage.aspx?rubricID=" + rubric.getRubricID().ToString() + "'); return false;";
-                btnView.CommandName = rubric.getRubricID().ToString();
+                btnView.OnClientClick = "window.open('RubricDetailPage.aspx?rubricID=" + rubric.rubricID.ToString() + "'); return false;";
+                btnView.CommandName = rubric.rubricID.ToString();
 
 
                 btnSelect.Text = "Attach";
                 btnSelect.Click += attachRubric;
-                btnSelect.CommandName = rubric.getRubricID().ToString();
+                btnSelect.CommandName = rubric.rubricID.ToString();
 
                 tr.Cells.Add(tc1);
 

@@ -23,14 +23,21 @@ namespace E_Rubric_System.UI
             {
                 Rubric rubric = (Rubric)rubricsIterator.getNext();
                 TableRow tr = new TableRow();
+
                 TableCell tc1 = new TableCell();
-                tc1.Text = rubric.getRubricName();
+                tc1.Text = rubric.rubricName;
                 tr.Cells.Add(tc1);
+
+                TableCell tc3 = new TableCell();
+                tc3.Text = rubric.RubricType;
+                tr.Cells.Add(tc3);
+
+
                 TableCell tc2 = new TableCell();
                 Button btn = new Button();
                 btn.Text = "View";
                 btn.Click += gotoRubricDetailPage;
-                btn.CommandName = rubric.getRubricID().ToString();
+                btn.CommandName = rubric.rubricID.ToString();
                 tc2.Controls.Add(btn);
 
                 tr.Cells.Add(tc2);

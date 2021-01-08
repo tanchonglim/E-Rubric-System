@@ -11,13 +11,10 @@ namespace E_Rubric_System.UI
 {
     public partial class RubricDetailPage : System.Web.UI.Page
 
-
     {
+        Rubric rubric;
         protected void Page_Load(object sender, EventArgs e)
         {
-            enableViewMode();
-            if (!IsPostBack)
-            {
                 viewMode.Visible = true;
                 editMode.Visible = false;
                 RubricHandler rh = new RubricHandler();
@@ -27,73 +24,61 @@ namespace E_Rubric_System.UI
                     Response.Redirect("RubricPage.aspx");
                 }
 
-                Rubric rubric = rh.getRubric(Int32.Parse(rubricID));
+                this.rubric = rh.getRubric(Int32.Parse(rubricID));
 
-                txtRubricTitle.Text = rubric.getRubricName();
+                if (!IsPostBack)
+                {
+                    txtRubricTitle.Text = rubric.rubricName;
+                }
 
-                txtCriteria1.Text = rubric.getCriteria().Split('|')[0];
-                txtCriteria2.Text = rubric.getCriteria().Split('|')[1];
-                txtCriteria3.Text = rubric.getCriteria().Split('|')[2];
+                Table rubricTable = rubric.getRubricTable();
 
-                txtPoor1.Text = rubric.getPoor().Split('|')[0];
-                txtPoor2.Text = rubric.getPoor().Split('|')[1];
-                txtPoor3.Text = rubric.getPoor().Split('|')[2];
+                TableRowCollection trc = rubricTable.Rows;
+                List<TableRow> row = new List<TableRow>();
+                for(int i = 0; i < trc.Count; i++)
+                {
+                    row.Add(trc[i]);
+                }
 
-                txtFair1.Text = rubric.getFair().Split('|')[0];
-                txtFair2.Text = rubric.getFair().Split('|')[1];
-                txtFair3.Text = rubric.getFair().Split('|')[2];
+                tblRubric.Rows.AddRange(row.ToArray());
 
-                txtStatis1.Text = rubric.getSatisfactory().Split('|')[0];
-                txtStatis2.Text = rubric.getSatisfactory().Split('|')[1];
-                txtStatis3.Text = rubric.getSatisfactory().Split('|')[2];
-
-                txtGood1.Text = rubric.getGood().Split('|')[0];
-                txtGood2.Text = rubric.getGood().Split('|')[1];
-                txtGood3.Text = rubric.getGood().Split('|')[2];
-
-                txtExcel1.Text = rubric.getExcellent().Split('|')[0];
-                txtExcel2.Text = rubric.getExcellent().Split('|')[1];
-                txtExcel3.Text = rubric.getExcellent().Split('|')[2];
-            }
+                if (Request.QueryString.Get("mode")!= null && Request.QueryString.Get("mode").Equals("edit"))
+                {
+                    this.enableEditMode();
+               
+                }
+                else
+                {
+                    this.enableViewMode();
+                }
+           
 
         }
-
-
 
         protected void gotoRubricPage(object sender, EventArgs e)
         {
             Response.Redirect("RubricPage.aspx");
         }
 
-        protected void enableEditMode(object sender, EventArgs e)
+        protected void enableEditMode()
         {
             viewMode.Visible = false;
             editMode.Visible = true;
 
             txtRubricTitle.ReadOnly = false;
-            txtCriteria1.ReadOnly = false;
-            txtCriteria2.ReadOnly = false;
-            txtCriteria3.ReadOnly = false;
 
-            txtPoor1.ReadOnly = false;
-            txtPoor2.ReadOnly = false;
-            txtPoor3.ReadOnly = false;
+            foreach (TableRow row in tblRubric.Rows) { 
+            
+                foreach(TableCell cell in row.Cells)
+                {
+                    if (cell.HasControls())
+                    {
+                        (cell.Controls[0] as TextBox).ReadOnly = false;
+                    }
+                  
+                }
+            }
 
-            txtFair1.ReadOnly = false;
-            txtFair2.ReadOnly = false;
-            txtFair3.ReadOnly = false;
-
-            txtStatis1.ReadOnly = false;
-            txtStatis2.ReadOnly = false;
-            txtStatis3.ReadOnly = false;
-
-            txtGood1.ReadOnly = false;
-            txtGood2.ReadOnly = false;
-            txtGood3.ReadOnly = false;
-
-            txtExcel1.ReadOnly = false;
-            txtExcel2.ReadOnly = false;
-            txtExcel3.ReadOnly = false;
         }
 
         protected void enableViewMode()
@@ -102,29 +87,20 @@ namespace E_Rubric_System.UI
             editMode.Visible = false;
 
             txtRubricTitle.ReadOnly = true;
-            txtCriteria1.ReadOnly = true;
-            txtCriteria2.ReadOnly = true;
-            txtCriteria3.ReadOnly = true;
 
-            txtPoor1.ReadOnly = true;
-            txtPoor2.ReadOnly = true;
-            txtPoor3.ReadOnly = true;
+            foreach (TableRow row in tblRubric.Rows)
+            {
 
-            txtFair1.ReadOnly = true;
-            txtFair2.ReadOnly = true;
-            txtFair3.ReadOnly = true;
+                foreach (TableCell cell in row.Cells)
+                {
+                    if (cell.HasControls())
+                    {
+                        (cell.Controls[0] as TextBox).ReadOnly = true;
+                    }
 
-            txtStatis1.ReadOnly = true;
-            txtStatis2.ReadOnly = true;
-            txtStatis3.ReadOnly = true;
+                }
+            }
 
-            txtGood1.ReadOnly = true;
-            txtGood2.ReadOnly = true;
-            txtGood3.ReadOnly = true;
-
-            txtExcel1.ReadOnly = true;
-            txtExcel2.ReadOnly = true;
-            txtExcel3.ReadOnly = true;
         }
 
 
@@ -132,20 +108,22 @@ namespace E_Rubric_System.UI
         {
             //perform update
             var rubricID = Request.QueryString.Get("rubricID");
-            string rubricName = txtRubricTitle.Text.ToString();
-            string criteria = txtCriteria1.Text + "|" + txtCriteria2.Text + "|" + txtCriteria3.Text;
-            string poor = txtPoor1.Text + "|" + txtPoor2.Text + "|" + txtPoor3.Text;
-            string fair = txtFair1.Text + "|" + txtFair2.Text + "|" + txtFair3.Text;
-            string satisfactory = txtStatis1.Text + "|" + txtStatis2.Text + "|" + txtStatis3.Text;
-            string good = txtGood1.Text + "|" + txtGood2.Text + "|" + txtGood3.Text;
-            string excellent = txtExcel1.Text + "|" + txtExcel2.Text + "|" + txtExcel3.Text;
+            this.rubric.updateRubric(tblRubric);
+
+            var rubricName = txtRubricTitle.Text;
+            var criteria = rubric.Criteria;
+            var poor = rubric.Poor;
+            var satisfactory = rubric.Satisfactory;
+            var fair = rubric.Fair;
+            var good = rubric.Good;
+            var excellent = rubric.Excellent;
 
             RubricHandler rh = new RubricHandler();
 
             rh.updateRubric(rubricName, criteria, poor, fair, satisfactory, good, excellent, Int32.Parse(rubricID));
 
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Update success", "alert('Update success')", true);
-            enableViewMode();
+            Page.Response.Redirect("RubricDetailPage.aspx?rubricID=" + rubricID);
         }
 
         protected void deleteRubric(object sender, EventArgs e)
@@ -165,7 +143,13 @@ namespace E_Rubric_System.UI
 
         protected void enableViewMode(object sender, EventArgs e)
         {
-            enableViewMode();
+            var rubricID = Request.QueryString.Get("rubricID");
+            Page.Response.Redirect("RubricDetailPage.aspx?rubricID="+ rubricID);
+        }
+
+        protected void goEditMode(object sender, EventArgs e)
+        {
+            Page.Response.Redirect(Page.Request.RawUrl+"&mode=edit", true);
         }
     }
 }

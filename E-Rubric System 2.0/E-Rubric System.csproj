@@ -76,10 +76,15 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\AnalyticRubric.cs" />
+    <Compile Include="BLL\AnalyticRubricCreator.cs" />
     <Compile Include="BLL\Coursework.cs" />
     <Compile Include="BLL\CourseworkCollection.cs" />
     <Compile Include="BLL\CourseworkHandler.cs" />
     <Compile Include="BLL\CourseworkIterator.cs" />
+    <Compile Include="BLL\HolisticRubric.cs" />
+    <Compile Include="BLL\HolisticRubricCreator.cs" />
+    <Compile Include="BLL\IRubricCreator.cs" />
     <Compile Include="BLL\Item.cs" />
     <Compile Include="BLL\ItemIterator.cs" />
     <Compile Include="BLL\ItemCollection.cs" />
@@ -87,6 +92,9 @@
     <Compile Include="BLL\RubricCollection.cs" />
     <Compile Include="BLL\RubricHandler.cs" />
     <Compile Include="BLL\RubricIterator.cs" />
+    <Compile Include="DLL\ERSDataSet.cs">
+      <DependentUpon>ERSDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DLL\ERSDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

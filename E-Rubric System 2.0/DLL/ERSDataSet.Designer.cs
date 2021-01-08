@@ -372,6 +372,24 @@ namespace E_Rubric_System.DLL {
             
             private global::System.Data.DataColumn columnRubricID;
             
+            private global::System.Data.DataColumn columnRubricType;
+            
+            private global::System.Data.DataColumn columnRubricName1;
+            
+            private global::System.Data.DataColumn columnCriteria1;
+            
+            private global::System.Data.DataColumn columnPoor1;
+            
+            private global::System.Data.DataColumn columnSatisfactory1;
+            
+            private global::System.Data.DataColumn columnGood1;
+            
+            private global::System.Data.DataColumn columnExcellent1;
+            
+            private global::System.Data.DataColumn columnRubricID1;
+            
+            private global::System.Data.DataColumn columnFair1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public RubricDataTable() {
@@ -471,6 +489,78 @@ namespace E_Rubric_System.DLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn RubricTypeColumn {
+                get {
+                    return this.columnRubricType;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn RubricName1Column {
+                get {
+                    return this.columnRubricName1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Criteria1Column {
+                get {
+                    return this.columnCriteria1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Poor1Column {
+                get {
+                    return this.columnPoor1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Satisfactory1Column {
+                get {
+                    return this.columnSatisfactory1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Good1Column {
+                get {
+                    return this.columnGood1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Excellent1Column {
+                get {
+                    return this.columnExcellent1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn RubricID1Column {
+                get {
+                    return this.columnRubricID1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Fair1Column {
+                get {
+                    return this.columnFair1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -506,7 +596,7 @@ namespace E_Rubric_System.DLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RubricRow AddRubricRow(string RubricName, string Criteria, string Poor, string Fair, string Satisfactory, string Good, string Excellent) {
+            public RubricRow AddRubricRow(string RubricName, string Criteria, string Poor, string Fair, string Satisfactory, string Good, string Excellent, string RubricType, string RubricName1, string Criteria1, string Poor1, string Satisfactory1, string Good1, string Excellent1, string Fair1) {
                 RubricRow rowRubricRow = ((RubricRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         RubricName,
@@ -516,7 +606,16 @@ namespace E_Rubric_System.DLL {
                         Satisfactory,
                         Good,
                         Excellent,
-                        null};
+                        null,
+                        RubricType,
+                        RubricName1,
+                        Criteria1,
+                        Poor1,
+                        Satisfactory1,
+                        Good1,
+                        Excellent1,
+                        null,
+                        Fair1};
                 rowRubricRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRubricRow);
                 return rowRubricRow;
@@ -554,6 +653,15 @@ namespace E_Rubric_System.DLL {
                 this.columnGood = base.Columns["Good"];
                 this.columnExcellent = base.Columns["Excellent"];
                 this.columnRubricID = base.Columns["RubricID"];
+                this.columnRubricType = base.Columns["RubricType"];
+                this.columnRubricName1 = base.Columns["RubricName1"];
+                this.columnCriteria1 = base.Columns["Criteria1"];
+                this.columnPoor1 = base.Columns["Poor1"];
+                this.columnSatisfactory1 = base.Columns["Satisfactory1"];
+                this.columnGood1 = base.Columns["Good1"];
+                this.columnExcellent1 = base.Columns["Excellent1"];
+                this.columnRubricID1 = base.Columns["RubricID1"];
+                this.columnFair1 = base.Columns["Fair1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -575,6 +683,24 @@ namespace E_Rubric_System.DLL {
                 base.Columns.Add(this.columnExcellent);
                 this.columnRubricID = new global::System.Data.DataColumn("RubricID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRubricID);
+                this.columnRubricType = new global::System.Data.DataColumn("RubricType", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRubricType);
+                this.columnRubricName1 = new global::System.Data.DataColumn("RubricName1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRubricName1);
+                this.columnCriteria1 = new global::System.Data.DataColumn("Criteria1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCriteria1);
+                this.columnPoor1 = new global::System.Data.DataColumn("Poor1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPoor1);
+                this.columnSatisfactory1 = new global::System.Data.DataColumn("Satisfactory1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSatisfactory1);
+                this.columnGood1 = new global::System.Data.DataColumn("Good1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGood1);
+                this.columnExcellent1 = new global::System.Data.DataColumn("Excellent1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExcellent1);
+                this.columnRubricID1 = new global::System.Data.DataColumn("RubricID1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRubricID1);
+                this.columnFair1 = new global::System.Data.DataColumn("Fair1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFair1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnRubricID}, true));
                 this.columnRubricName.MaxLength = 50;
@@ -590,6 +716,18 @@ namespace E_Rubric_System.DLL {
                 this.columnRubricID.AllowDBNull = false;
                 this.columnRubricID.ReadOnly = true;
                 this.columnRubricID.Unique = true;
+                this.columnRubricName1.MaxLength = 50;
+                this.columnCriteria1.MaxLength = 2147483647;
+                this.columnPoor1.MaxLength = 2147483647;
+                this.columnSatisfactory1.MaxLength = 2147483647;
+                this.columnGood1.MaxLength = 2147483647;
+                this.columnExcellent1.MaxLength = 2147483647;
+                this.columnRubricID1.AutoIncrement = true;
+                this.columnRubricID1.AutoIncrementSeed = -1;
+                this.columnRubricID1.AutoIncrementStep = -1;
+                this.columnRubricID1.AllowDBNull = false;
+                this.columnRubricID1.ReadOnly = true;
+                this.columnFair1.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1468,6 +1606,145 @@ namespace E_Rubric_System.DLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string RubricType {
+                get {
+                    try {
+                        return ((string)(this[this.tableRubric.RubricTypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RubricType\' in table \'Rubric\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRubric.RubricTypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string RubricName1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableRubric.RubricName1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RubricName1\' in table \'Rubric\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRubric.RubricName1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Criteria1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableRubric.Criteria1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Criteria1\' in table \'Rubric\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRubric.Criteria1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Poor1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableRubric.Poor1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Poor1\' in table \'Rubric\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRubric.Poor1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Satisfactory1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableRubric.Satisfactory1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Satisfactory1\' in table \'Rubric\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRubric.Satisfactory1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Good1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableRubric.Good1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Good1\' in table \'Rubric\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRubric.Good1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Excellent1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableRubric.Excellent1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Excellent1\' in table \'Rubric\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRubric.Excellent1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int RubricID1 {
+                get {
+                    return ((int)(this[this.tableRubric.RubricID1Column]));
+                }
+                set {
+                    this[this.tableRubric.RubricID1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Fair1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableRubric.Fair1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Fair1\' in table \'Rubric\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRubric.Fair1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsRubricNameNull() {
                 return this.IsNull(this.tableRubric.RubricNameColumn);
             }
@@ -1548,6 +1825,102 @@ namespace E_Rubric_System.DLL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetExcellentNull() {
                 this[this.tableRubric.ExcellentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsRubricTypeNull() {
+                return this.IsNull(this.tableRubric.RubricTypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetRubricTypeNull() {
+                this[this.tableRubric.RubricTypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsRubricName1Null() {
+                return this.IsNull(this.tableRubric.RubricName1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetRubricName1Null() {
+                this[this.tableRubric.RubricName1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCriteria1Null() {
+                return this.IsNull(this.tableRubric.Criteria1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCriteria1Null() {
+                this[this.tableRubric.Criteria1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPoor1Null() {
+                return this.IsNull(this.tableRubric.Poor1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPoor1Null() {
+                this[this.tableRubric.Poor1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSatisfactory1Null() {
+                return this.IsNull(this.tableRubric.Satisfactory1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSatisfactory1Null() {
+                this[this.tableRubric.Satisfactory1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsGood1Null() {
+                return this.IsNull(this.tableRubric.Good1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetGood1Null() {
+                this[this.tableRubric.Good1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsExcellent1Null() {
+                return this.IsNull(this.tableRubric.Excellent1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetExcellent1Null() {
+                this[this.tableRubric.Excellent1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFair1Null() {
+                return this.IsNull(this.tableRubric.Fair1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFair1Null() {
+                this[this.tableRubric.Fair1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2073,39 +2446,63 @@ namespace E_Rubric_System.DLL.ERSDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Good", "Good");
             tableMapping.ColumnMappings.Add("Excellent", "Excellent");
             tableMapping.ColumnMappings.Add("RubricID", "RubricID");
+            tableMapping.ColumnMappings.Add("RubricType", "RubricType");
+            tableMapping.ColumnMappings.Add("RubricName1", "RubricName1");
+            tableMapping.ColumnMappings.Add("Criteria1", "Criteria1");
+            tableMapping.ColumnMappings.Add("Poor1", "Poor1");
+            tableMapping.ColumnMappings.Add("Satisfactory1", "Satisfactory1");
+            tableMapping.ColumnMappings.Add("Good1", "Good1");
+            tableMapping.ColumnMappings.Add("Excellent1", "Excellent1");
+            tableMapping.ColumnMappings.Add("RubricID1", "RubricID1");
+            tableMapping.ColumnMappings.Add("Fair1", "Fair1");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Rubric] WHERE (([RubricID] = @Original_RubricID))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Rubric] WHERE (([RubricID] = @p20) AND ([RubricID] = @Original_Rubri" +
+                "cID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RubricID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RubricID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p20", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RubricID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RubricID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RubricID1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Rubric] ([RubricName], [Criteria], [Poor], [Fair], [Satisfacto" +
-                "ry], [Good], [Excellent]) VALUES (@RubricName, @Criteria, @Poor, @Fair, @Satisfa" +
-                "ctory, @Good, @Excellent)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Rubric] ([RubricName], [Criteria], [Poor], [Satisfactory], [Good], [Excellent], [RubricName], [Criteria], [Poor], [Fair], [Satisfactory], [Good], [Excellent], [RubricType], [Fair]) VALUES (@p1, @p4, @p7, @p10, @p13, @p16, @RubricName, @Criteria, @Poor, @p21, @Satisfactory, @Good, @Excellent, @RubricType, @Fair)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RubricName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RubricName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Criteria", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Criteria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Poor", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Poor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fair", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fair", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Satisfactory", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Satisfactory", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Good", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Good", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Excellent", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Excellent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RubricName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Criteria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Poor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Satisfactory", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Good", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p16", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Excellent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RubricName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RubricName1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Criteria", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Criteria1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Poor", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Poor1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p21", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fair", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Satisfactory", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Satisfactory1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Good", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Good1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Excellent", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Excellent1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RubricType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RubricType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fair", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fair1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Rubric] SET [RubricName] = @RubricName, [Criteria] = @Criteria, [Po" +
-                "or] = @Poor, [Fair] = @Fair, [Satisfactory] = @Satisfactory, [Good] = @Good, [Ex" +
-                "cellent] = @Excellent WHERE (([RubricID] = @Original_RubricID))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Rubric] SET [RubricName] = @p1, [Criteria] = @p4, [Poor] = @p7, [Satisfactory] = @p10, [Good] = @p13, [Excellent] = @p16, [RubricName] = @RubricName, [Criteria] = @Criteria, [Poor] = @Poor, [Fair] = @p21, [Satisfactory] = @Satisfactory, [Good] = @Good, [Excellent] = @Excellent, [RubricType] = @RubricType, [Fair] = @Fair WHERE (([RubricID] = @p20) AND ([RubricID] = @Original_RubricID))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RubricName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RubricName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Criteria", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Criteria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Poor", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Poor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fair", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fair", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Satisfactory", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Satisfactory", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Good", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Good", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Excellent", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Excellent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RubricID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RubricID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RubricName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Criteria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Poor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Satisfactory", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Good", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p16", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Excellent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RubricName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RubricName1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Criteria", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Criteria1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Poor", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Poor1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p21", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fair", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Satisfactory", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Satisfactory1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Good", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Good1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Excellent", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Excellent1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RubricType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RubricType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fair", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fair1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p20", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RubricID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RubricID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RubricID1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2121,14 +2518,15 @@ namespace E_Rubric_System.DLL.ERSDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT RubricName, Criteria, Poor, Fair, Satisfactory, Good, Excellent, RubricID " +
-                "FROM dbo.Rubric";
+            this._commandCollection[0].CommandText = "SELECT RubricName, Criteria, Poor, Satisfactory, Good, Excellent, RubricID, Rubri" +
+                "cName, Criteria, Poor, Fair, Satisfactory, Good, Excellent, RubricID, RubricType" +
+                ", Fair\r\nFROM     Rubric";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO [dbo].[Rubric] ([RubricName], [Criteria], [Poor], [Fair], [Satisfacto" +
-                "ry], [Good], [Excellent]) VALUES (@RubricName, @Criteria, @Poor, @Fair, @Satisfa" +
-                "ctory, @Good, @Excellent)";
+            this._commandCollection[1].CommandText = "INSERT INTO Rubric\r\n                  (RubricName, Criteria, Poor, Fair, Satisfac" +
+                "tory, Good, Excellent, RubricType)\r\nVALUES (@RubricName,@Criteria,@Poor,@Fair,@S" +
+                "atisfactory,@Good,@Excellent,@RubricType)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RubricName", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "RubricName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Criteria", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Criteria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2137,6 +2535,7 @@ namespace E_Rubric_System.DLL.ERSDataSetTableAdapters {
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Satisfactory", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Satisfactory", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Good", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Good", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Excellent", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Excellent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RubricType", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "RubricType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "DELETE FROM [dbo].[Rubric] WHERE (([RubricID] = @Original_RubricID))";
@@ -2144,8 +2543,8 @@ namespace E_Rubric_System.DLL.ERSDataSetTableAdapters {
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RubricID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "RubricID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT Criteria, Excellent, Fair, Good, Poor, RubricID, RubricName, Satisfactory " +
-                "FROM Rubric WHERE (RubricID = @Original_RubricID)";
+            this._commandCollection[3].CommandText = "SELECT Criteria, Excellent, Fair, Good, Poor, RubricID, RubricName, RubricType, S" +
+                "atisfactory FROM Rubric WHERE (RubricID = @Original_RubricID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RubricID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "RubricID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
@@ -2220,7 +2619,7 @@ namespace E_Rubric_System.DLL.ERSDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int createRubric(string RubricName, string Criteria, string Poor, string Fair, string Satisfactory, string Good, string Excellent) {
+        public virtual int createRubric(string RubricName, string Criteria, string Poor, string Fair, string Satisfactory, string Good, string Excellent, string RubricType) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((RubricName == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
@@ -2263,6 +2662,12 @@ namespace E_Rubric_System.DLL.ERSDataSetTableAdapters {
             }
             else {
                 command.Parameters[6].Value = ((string)(Excellent));
+            }
+            if ((RubricType == null)) {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[7].Value = ((string)(RubricType));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

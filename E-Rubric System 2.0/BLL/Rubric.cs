@@ -10,160 +10,30 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-
-
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace E_Rubric_System.BLL
 {
-	public class Rubric : Item
+	public abstract class Rubric : Item
 	{
+        public int rubricID { get; set; }
+        public String  rubricName { get; set; }
+		public String Criteria { get; set; }
+		public String Poor { get; set; }
+		public String Fair { get; set; }
+		public String Satisfactory { get; set; }
+		public String Good { get; set; }
+		public String Excellent { get; set; }
+		public String RubricType { get; set; }
 
-		private int rubricID;
-		private String rubricName;
-		private String Criteria;
-		private String Poor;
-		private String Fair;
-		private String Satisfactory;
-		private String Good;
-		private String Excellent;
+		public Rubric() { }
 
+		public abstract Table getRubricTable();
 
-		/// 
-		/// <param name="name"></param>
-		/// <param name="criteria"></param>
-		/// <param name="poor"></param>
-		/// <param name="good"></param>
-		/// <param name="fair"></param>
-		/// <param name="excellent"></param>
-		/// <param name="satisfactory"></param>
-		public Rubric(int id,string name, string criteria, string poor, string good, string fair, string excellent, string satisfactory)
-		{
-			rubricID = id;
-			rubricName = name;
-			Criteria = criteria;
-			Poor = poor;
-			Fair = fair;
-			Satisfactory = satisfactory;
-			Good = good;
-			Excellent = excellent;
-
-		}
-
-		public Rubric()
-        {
-
-        }
-
-		~Rubric()
-		{
-
-		}
-
-
-		public int getRubricID()
-		{
-
-			return rubricID;
-		}
-
-		/// 
-		/// <param name="rubricID"></param>
-		public void setRubricID(int rubricID)
-		{
-			this.rubricID = rubricID;
-		}
-
-		public String getRubricName()
-		{
-
-			return rubricName;
-		}
-
-		/// 
-		/// <param name="rubricName"></param>
-		public void setRubricName(String rubricName)
-		{
-			this.rubricName = rubricName;
-		}
-
-		/// 
-		/// <param name="criteria"></param>
-		public void setCriteria(String criteria)
-		{
-			this.Criteria = criteria;
-		}
-
-		public String getCriteria()
-		{
-
-			return this.Criteria;
-		}
-
-		/// 
-		/// <param name="poor"></param>
-		public void setPoor(String poor)
-		{
-			this.Poor = poor;
-		}
-
-		public String getPoor()
-		{
-
-			return this.Poor;
-		}
-
-		/// 
-		/// <param name="fair"></param>
-		public void setFair(String fair)
-		{
-			this.Fair = fair;
-		}
-
-		public String getFair()
-		{
-
-			return this.Fair;
-		}
-
-		/// 
-		/// <param name="satis"></param>
-		public void setSatisfactory(String satis)
-		{
-			this.Satisfactory = satis;
-		}
-
-		public String getSatisfactory()
-		{
-
-			return this.Satisfactory;
-		}
-
-		public String getGood()
-		{
-
-			return this.Good;
-		}
-
-		/// 
-		/// <param name="good"></param>
-		public void setGood(string good)
-		{
-			this.Good = good;
-		}
-
-		public String getExcellent()
-		{
-
-			return this.Excellent;
-		}
-
-		/// 
-		/// <param name="excel"></param>
-		public void setExcellent(String excel)
-		{
-			this.Excellent = excel;
-		}
+		public abstract void updateRubric(Table table);
 
 	}//end Rubric
 
-}//end namespace Business
+}

@@ -45,51 +45,23 @@
         </div>
         </div>
         <p style="height: 39px; margin-left: 40px;">
+            Rubric Type:
+            <asp:DropDownList ID="dropDownRubricType" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                <asp:ListItem Value="analytic">Analytic Rubric</asp:ListItem>
+                <asp:ListItem Value="holistic">Holistic Rubric</asp:ListItem>
+            </asp:DropDownList>
+        </p>
+        <p style="height: 39px; margin-left: 40px;">
             Rubric Title:
             <asp:TextBox ID="txtRubricTitle" runat="server" placeholder="Type rubric title..." Height="27px" Width="165px" ></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnCreate" runat="server" Text="Create" OnClick="createNewRubric" Height="35px" Width="139px" />
         </p>
         <div style="margin-left: 40px; height: 267px;">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Table ID="tblRubric" runat="server" border="1" Height="399px" Width="853px">
-                <asp:TableRow>
-                   <asp:TableHeaderCell> Criteria </asp:TableHeaderCell>
-                     <asp:TableHeaderCell> Excellent (5) </asp:TableHeaderCell>
-                     <asp:TableHeaderCell> Good (4) </asp:TableHeaderCell>
-                     <asp:TableHeaderCell> Satisfactory (3) </asp:TableHeaderCell>
-                     <asp:TableHeaderCell> Fair (2) </asp:TableHeaderCell>
-                     <asp:TableHeaderCell> Poor (1) </asp:TableHeaderCell>
-                </asp:TableRow>
-
-                <asp:TableRow>
-                    <asp:TableCell> <asp:TextBox ID="txtCriteria1" runat="server" placeholder="Type description..." TextMode="MultiLine"></asp:TextBox> </asp:TableCell>
-                    <asp:TableCell> <asp:TextBox ID="txtExcel1" runat="server" placeholder="Type description..." TextMode="MultiLine"></asp:TextBox> </asp:TableCell>
-                    <asp:TableCell> <asp:TextBox ID="txtGood1" runat="server" placeholder="Type description..." TextMode="MultiLine"></asp:TextBox> </asp:TableCell>
-                    <asp:TableCell> <asp:TextBox ID="txtStatis1" runat="server" placeholder="Type description..." TextMode="MultiLine"> </asp:TextBox> </asp:TableCell>
-                    <asp:TableCell> <asp:TextBox ID="txtFair1" runat="server" placeholder="Type description..." TextMode="MultiLine"> </asp:TextBox> </asp:TableCell>
-                    <asp:TableCell> <asp:TextBox ID="txtPoor1" runat="server" placeholder="Type description..." TextMode="MultiLine"> </asp:TextBox> </asp:TableCell>
-                </asp:TableRow>
-
-                 <asp:TableRow>
-                    <asp:TableCell> <asp:TextBox ID="txtCriteria2" runat="server" placeholder="Type description..." TextMode="MultiLine"> </asp:TextBox> </asp:TableCell>
-                    <asp:TableCell> <asp:TextBox ID="txtExcel2" runat="server" placeholder="Type description..." TextMode="MultiLine"> </asp:TextBox> </asp:TableCell>
-                    <asp:TableCell> <asp:TextBox ID="txtGood2" runat="server" placeholder="Type description..." TextMode="MultiLine"> </asp:TextBox> </asp:TableCell>
-                    <asp:TableCell> <asp:TextBox ID="txtStatis2" runat="server" placeholder="Type description..." TextMode="MultiLine"> </asp:TextBox> </asp:TableCell>
-                    <asp:TableCell> <asp:TextBox ID="txtFair2" runat="server" placeholder="Type description..." TextMode="MultiLine"> </asp:TextBox> </asp:TableCell>
-                    <asp:TableCell> <asp:TextBox ID="txtPoor2" runat="server" placeholder="Type description..." TextMode="MultiLine"> </asp:TextBox> </asp:TableCell>
-                </asp:TableRow>
-
-                 <asp:TableRow>
-                    <asp:TableCell> <asp:TextBox ID="txtCriteria3" runat="server" placeholder="Type description..." TextMode="MultiLine"> </asp:TextBox> </asp:TableCell>
-                    <asp:TableCell> <asp:TextBox ID="txtExcel3" runat="server" placeholder="Type description..." TextMode="MultiLine"> </asp:TextBox> </asp:TableCell>
-                    <asp:TableCell> <asp:TextBox ID="txtGood3" runat="server" placeholder="Type description..." TextMode="MultiLine"> </asp:TextBox> </asp:TableCell>
-                    <asp:TableCell> <asp:TextBox ID="txtStatis3" runat="server" placeholder="Type description..." TextMode="MultiLine"> </asp:TextBox> </asp:TableCell>
-                    <asp:TableCell> <asp:TextBox ID="txtFair3" runat="server" placeholder="Type description..." TextMode="MultiLine"> </asp:TextBox> </asp:TableCell>
-                    <asp:TableCell> <asp:TextBox ID="txtPoor3" runat="server" placeholder="Type description..." TextMode="MultiLine"> </asp:TextBox> </asp:TableCell>
-                </asp:TableRow>
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnAddRow" runat="server" OnClick="btnAddRow_Click" Text="Add Row" />
+&nbsp;<asp:Table ID="tblRubric" runat="server" border="1"  Width="853px">
             </asp:Table>
+            
         </div>
     </form>
 </body>
