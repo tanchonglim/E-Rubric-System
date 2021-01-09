@@ -2,16 +2,17 @@
 <xs:schema id="ERSDataSet" targetNamespace="http://tempuri.org/ERSDataSet.xsd" xmlns:mstns="http://tempuri.org/ERSDataSet.xsd" xmlns="http://tempuri.org/ERSDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ERSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ERSConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ERSConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ERSConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ERSConnectionString1 (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ERSConnectionString1.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ERSConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="ERSConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ERSConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ERSConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="ERSConnectionString1 (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ERSConnectionString1.ConnectionString" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ERS2ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ERS2ConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ERS2ConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ERSConnectionTCL" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ERSConnectionTCL (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ERSConnectionTCL.ConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Coursework_RubricTableAdapter" GeneratorDataComponentClassName="Coursework_RubricTableAdapter" Name="Coursework_Rubric" UserDataComponentName="Coursework_RubricTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ERSConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="selectCoursework" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="getCoursework" GeneratorSourceName="selectCoursework" GetMethodModifier="Public" GetMethodName="getCoursework" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="getCoursework" UserSourceName="selectCoursework">
+              <DbSource ConnectionRef="ERSConnectionTCL (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="selectCoursework" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="getCoursework" GeneratorSourceName="selectCoursework" GetMethodModifier="Public" GetMethodName="getCoursework" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="getCoursework" UserSourceName="selectCoursework">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Coursework.CourseworkName, Coursework.DueDate, Coursework.NoFileSubmit, Rubric.RubricName
@@ -36,7 +37,7 @@ WHERE Coursework.CourseworkID = @CourseworkID</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RubricTableAdapter" GeneratorDataComponentClassName="RubricTableAdapter" Name="Rubric" UserDataComponentName="RubricTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ERS2ConnectionString (Web.config)" DbObjectName="ERS2.dbo.Rubric" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="selectAllRubric" GetMethodModifier="Public" GetMethodName="selectAllRubric" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="selectAllRubric" UserSourceName="selectAllRubric">
+              <DbSource ConnectionRef="ERSConnectionTCL (Web.config)" DbObjectName="ERS.dbo.Rubric" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="selectAllRubric" GetMethodModifier="Public" GetMethodName="selectAllRubric" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="selectAllRubric" UserSourceName="selectAllRubric">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Rubric] WHERE (([RubricID] = @Original_RubricID))</CommandText>
@@ -96,7 +97,7 @@ WHERE Coursework.CourseworkID = @CourseworkID</CommandText>
               <Mapping SourceColumn="RubricID" DataSetColumn="RubricID" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ERS2ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="createRubric" Modifier="Public" Name="createRubric" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="createRubric">
+              <DbSource ConnectionRef="ERSConnectionTCL (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="createRubric" Modifier="Public" Name="createRubric" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="createRubric">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO Rubric
@@ -115,7 +116,7 @@ VALUES (@RubricName,@Criteria,@Poor,@Fair,@Satisfactory,@Good,@Excellent,@Rubric
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="ERS2ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="deleteRubric" Modifier="Public" Name="deleteRubric" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="deleteRubric">
+              <DbSource ConnectionRef="ERSConnectionTCL (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="deleteRubric" Modifier="Public" Name="deleteRubric" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="deleteRubric">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [dbo].[Rubric] WHERE (([RubricID] = @Original_RubricID))</CommandText>
@@ -125,7 +126,7 @@ VALUES (@RubricName,@Criteria,@Poor,@Fair,@Satisfactory,@Good,@Excellent,@Rubric
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="ERS2ConnectionString (Web.config)" DbObjectName="ERS2.dbo.Rubric" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="selectRubric" GetMethodModifier="Public" GetMethodName="selectRubric" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="selectRubric" UserSourceName="selectRubric">
+              <DbSource ConnectionRef="ERSConnectionTCL (Web.config)" DbObjectName="ERS.dbo.Rubric" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="selectRubric" GetMethodModifier="Public" GetMethodName="selectRubric" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="selectRubric" UserSourceName="selectRubric">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT RubricName, Criteria, Poor, Fair, Satisfactory, Good, Excellent, RubricType, RubricID FROM dbo.Rubric WHERE (RubricID = @Original_RubricID)</CommandText>
@@ -135,7 +136,7 @@ VALUES (@RubricName,@Criteria,@Poor,@Fair,@Satisfactory,@Good,@Excellent,@Rubric
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ERS2ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="updateRubric" Modifier="Public" Name="updateRubric" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="updateRubric">
+              <DbSource ConnectionRef="ERSConnectionTCL (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="updateRubric" Modifier="Public" Name="updateRubric" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="updateRubric">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [dbo].[Rubric] SET [RubricName] = @RubricName, [Criteria] = @Criteria, [Poor] = @Poor, [Fair] = @Fair, [Satisfactory] = @Satisfactory, [Good] = @Good, [Excellent] = @Excellent WHERE (([RubricID] = @Original_RubricID))</CommandText>
@@ -156,7 +157,7 @@ VALUES (@RubricName,@Criteria,@Poor,@Fair,@Satisfactory,@Good,@Excellent,@Rubric
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CourseworkTableAdapter" GeneratorDataComponentClassName="CourseworkTableAdapter" Name="Coursework" UserDataComponentName="CourseworkTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ERS2ConnectionString (Web.config)" DbObjectName="ERS2.dbo.Coursework" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="selectAllCoursework" GetMethodModifier="Public" GetMethodName="selectAllCoursework" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="selectAllCoursework" UserSourceName="selectAllCoursework">
+              <DbSource ConnectionRef="ERSConnectionTCL (Web.config)" DbObjectName="ERS.dbo.Coursework" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="selectAllCoursework" GetMethodModifier="Public" GetMethodName="selectAllCoursework" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="selectAllCoursework" UserSourceName="selectAllCoursework">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Coursework] WHERE (([CourseworkID] = @Original_CourseworkID))</CommandText>
@@ -204,7 +205,7 @@ VALUES (@RubricName,@Criteria,@Poor,@Fair,@Satisfactory,@Good,@Excellent,@Rubric
               <Mapping SourceColumn="CourseworkID" DataSetColumn="CourseworkID" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ERS2ConnectionString (Web.config)" DbObjectName="ERS2.dbo.Coursework" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="selectCoursework" GetMethodModifier="Public" GetMethodName="selectCoursework" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="selectCoursework" UserSourceName="selectCoursework">
+              <DbSource ConnectionRef="ERSConnectionTCL (Web.config)" DbObjectName="ERS.dbo.Coursework" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="selectCoursework" GetMethodModifier="Public" GetMethodName="selectCoursework" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="selectCoursework" UserSourceName="selectCoursework">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT CourseworkName, DueDate, NoFileSubmit, RubricID, CourseworkID
@@ -216,7 +217,7 @@ WHERE  (CourseworkID = @courseworkID)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ERS2ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateCourseworkRubricID" Modifier="Public" Name="UpdateCourseworkRubricID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateCourseworkRubricID">
+              <DbSource ConnectionRef="ERSConnectionTCL (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateCourseworkRubricID" Modifier="Public" Name="UpdateCourseworkRubricID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateCourseworkRubricID">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE Coursework
@@ -239,7 +240,7 @@ WHERE  (CourseworkID = @Original_CourseworkID)</CommandText>
   <xs:element name="ERSDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ERSDataSet" msprop:Generator_UserDSName="ERSDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Coursework_Rubric" msprop:Generator_TableClassName="Coursework_RubricDataTable" msprop:Generator_TableVarName="tableCoursework_Rubric" msprop:Generator_RowChangedName="Coursework_RubricRowChanged" msprop:Generator_TablePropName="Coursework_Rubric" msprop:Generator_RowDeletingName="Coursework_RubricRowDeleting" msprop:Generator_RowChangingName="Coursework_RubricRowChanging" msprop:Generator_RowEvHandlerName="Coursework_RubricRowChangeEventHandler" msprop:Generator_RowDeletedName="Coursework_RubricRowDeleted" msprop:Generator_RowClassName="Coursework_RubricRow" msprop:Generator_UserTableName="Coursework_Rubric" msprop:Generator_RowEvArgName="Coursework_RubricRowChangeEvent">
+        <xs:element name="Coursework_Rubric" msprop:Generator_TableClassName="Coursework_RubricDataTable" msprop:Generator_TableVarName="tableCoursework_Rubric" msprop:Generator_TablePropName="Coursework_Rubric" msprop:Generator_RowDeletingName="Coursework_RubricRowDeleting" msprop:Generator_RowChangingName="Coursework_RubricRowChanging" msprop:Generator_RowEvHandlerName="Coursework_RubricRowChangeEventHandler" msprop:Generator_RowDeletedName="Coursework_RubricRowDeleted" msprop:Generator_UserTableName="Coursework_Rubric" msprop:Generator_RowChangedName="Coursework_RubricRowChanged" msprop:Generator_RowEvArgName="Coursework_RubricRowChangeEvent" msprop:Generator_RowClassName="Coursework_RubricRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CourseworkName" msprop:Generator_ColumnVarNameInTable="columnCourseworkName" msprop:Generator_ColumnPropNameInRow="CourseworkName" msprop:Generator_ColumnPropNameInTable="CourseworkNameColumn" msprop:Generator_UserColumnName="CourseworkName" minOccurs="0">
@@ -261,7 +262,7 @@ WHERE  (CourseworkID = @Original_CourseworkID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Rubric" msprop:Generator_TableClassName="RubricDataTable" msprop:Generator_TableVarName="tableRubric" msprop:Generator_TablePropName="Rubric" msprop:Generator_RowDeletingName="RubricRowDeleting" msprop:Generator_RowChangingName="RubricRowChanging" msprop:Generator_RowEvHandlerName="RubricRowChangeEventHandler" msprop:Generator_RowDeletedName="RubricRowDeleted" msprop:Generator_UserTableName="Rubric" msprop:Generator_RowChangedName="RubricRowChanged" msprop:Generator_RowEvArgName="RubricRowChangeEvent" msprop:Generator_RowClassName="RubricRow">
+        <xs:element name="Rubric" msprop:Generator_TableClassName="RubricDataTable" msprop:Generator_TableVarName="tableRubric" msprop:Generator_RowChangedName="RubricRowChanged" msprop:Generator_TablePropName="Rubric" msprop:Generator_RowDeletingName="RubricRowDeleting" msprop:Generator_RowChangingName="RubricRowChanging" msprop:Generator_RowEvHandlerName="RubricRowChangeEventHandler" msprop:Generator_RowDeletedName="RubricRowDeleted" msprop:Generator_RowClassName="RubricRow" msprop:Generator_UserTableName="Rubric" msprop:Generator_RowEvArgName="RubricRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="RubricName" msprop:Generator_ColumnVarNameInTable="columnRubricName" msprop:Generator_ColumnPropNameInRow="RubricName" msprop:Generator_ColumnPropNameInTable="RubricNameColumn" msprop:Generator_UserColumnName="RubricName" minOccurs="0">
@@ -324,7 +325,7 @@ WHERE  (CourseworkID = @Original_CourseworkID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Coursework" msprop:Generator_TableClassName="CourseworkDataTable" msprop:Generator_TableVarName="tableCoursework" msprop:Generator_TablePropName="Coursework" msprop:Generator_RowDeletingName="CourseworkRowDeleting" msprop:Generator_RowChangingName="CourseworkRowChanging" msprop:Generator_RowEvHandlerName="CourseworkRowChangeEventHandler" msprop:Generator_RowDeletedName="CourseworkRowDeleted" msprop:Generator_UserTableName="Coursework" msprop:Generator_RowChangedName="CourseworkRowChanged" msprop:Generator_RowEvArgName="CourseworkRowChangeEvent" msprop:Generator_RowClassName="CourseworkRow">
+        <xs:element name="Coursework" msprop:Generator_TableClassName="CourseworkDataTable" msprop:Generator_TableVarName="tableCoursework" msprop:Generator_RowChangedName="CourseworkRowChanged" msprop:Generator_TablePropName="Coursework" msprop:Generator_RowDeletingName="CourseworkRowDeleting" msprop:Generator_RowChangingName="CourseworkRowChanging" msprop:Generator_RowEvHandlerName="CourseworkRowChangeEventHandler" msprop:Generator_RowDeletedName="CourseworkRowDeleted" msprop:Generator_RowClassName="CourseworkRow" msprop:Generator_UserTableName="Coursework" msprop:Generator_RowEvArgName="CourseworkRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CourseworkName" msprop:Generator_ColumnVarNameInTable="columnCourseworkName" msprop:Generator_ColumnPropNameInRow="CourseworkName" msprop:Generator_ColumnPropNameInTable="CourseworkNameColumn" msprop:Generator_UserColumnName="CourseworkName" minOccurs="0">
@@ -354,7 +355,7 @@ WHERE  (CourseworkID = @Original_CourseworkID)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Coursework_Rubric" msdata:parent="Rubric" msdata:child="Coursework" msdata:parentkey="RubricID" msdata:childkey="RubricID" msprop:Generator_UserChildTable="Coursework" msprop:Generator_ChildPropName="GetCourseworkRows" msprop:Generator_UserRelationName="FK_Coursework_Rubric" msprop:Generator_ParentPropName="RubricRow" msprop:Generator_RelationVarName="relationFK_Coursework_Rubric" msprop:Generator_UserParentTable="Rubric" />
+      <msdata:Relationship name="FK_Coursework_Rubric" msdata:parent="Rubric" msdata:child="Coursework" msdata:parentkey="RubricID" msdata:childkey="RubricID" msprop:Generator_UserChildTable="Coursework" msprop:Generator_ChildPropName="GetCourseworkRows" msprop:Generator_UserRelationName="FK_Coursework_Rubric" msprop:Generator_RelationVarName="relationFK_Coursework_Rubric" msprop:Generator_UserParentTable="Rubric" msprop:Generator_ParentPropName="RubricRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

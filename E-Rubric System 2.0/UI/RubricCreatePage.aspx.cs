@@ -23,7 +23,6 @@ namespace E_Rubric_System.UI
             if (rubricType != null && rubricType.Equals("holistic"))
             {
                     dropDownRubricType.SelectedIndex = 1;
-                    //rubricCreator = new AnalyticRubricCreator();
                     btnAddRow.Visible = false;
                     rubricCreator = new HolisticRubricCreator();
             }
