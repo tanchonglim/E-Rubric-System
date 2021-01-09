@@ -72,7 +72,7 @@ namespace E_Rubric_System.BLL
 						
 			} else
             {
-				//rubricCreator = new HolisticRubricCreator();
+				rubricCreator = new HolisticRubricCreator();
 				
 			}
 			

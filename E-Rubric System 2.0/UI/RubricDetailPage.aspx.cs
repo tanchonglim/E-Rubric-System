@@ -29,6 +29,7 @@ namespace E_Rubric_System.UI
                 if (!IsPostBack)
                 {
                     txtRubricTitle.Text = rubric.rubricName;
+                    
                 }
 
                 Table rubricTable = rubric.getRubricTable();
@@ -64,7 +65,7 @@ namespace E_Rubric_System.UI
         {
             viewMode.Visible = false;
             editMode.Visible = true;
-
+            
             txtRubricTitle.ReadOnly = false;
 
             foreach (TableRow row in tblRubric.Rows) { 
@@ -122,8 +123,8 @@ namespace E_Rubric_System.UI
 
             rh.updateRubric(rubricName, criteria, poor, fair, satisfactory, good, excellent, Int32.Parse(rubricID));
 
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Update success", "alert('Update success')", true);
-            Page.Response.Redirect("RubricDetailPage.aspx?rubricID=" + rubricID);
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Update success", "alert('Update success'); window.location = 'RubricDetailPage.aspx?rubricID=" + rubricID + "';", true);
+            //Page.Response.Redirect("RubricDetailPage.aspx?rubricID=" + rubricID);
         }
 
         protected void deleteRubric(object sender, EventArgs e)
