@@ -7,12 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace E_Rubric_System.UI
 {
-    public partial class HomePage : System.Web.UI.Page
+    public partial class Home : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
     }
 }

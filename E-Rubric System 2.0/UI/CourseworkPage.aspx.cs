@@ -31,6 +31,7 @@ namespace E_Rubric_System.UI
                 btn.Text = "View";
                 btn.Click += gotoCourseworkDetailPage;
                 btn.CommandName = coursework.getCourseworkID().ToString();
+                btn.CssClass= "btn btn-outline-success";
                 tc2.Controls.Add(btn);
 
                 tr.Cells.Add(tc2);

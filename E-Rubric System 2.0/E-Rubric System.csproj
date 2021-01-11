@@ -67,6 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\2bootstrap.min.css" />
+    <Content Include="css\bootstrap-grid.css" />
+    <Content Include="css\bootstrap-grid.min.css" />
+    <Content Include="css\bootstrap-reboot.css" />
+    <Content Include="css\bootstrap-reboot.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="js\bootstrap.bundle.js" />
+    <Content Include="js\bootstrap.bundle.min.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-3.3.1.min.js" />
+    <Content Include="js\popper.min.js" />
     <Content Include="UI\CourseworkDetailPage.aspx" />
     <Content Include="UI\CourseworkPage.aspx" />
     <Content Include="UI\HomePage.aspx" />
@@ -115,6 +129,13 @@
     <Compile Include="UI\CourseworkPage.aspx.designer.cs">
       <DependentUpon>CourseworkPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UI\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
     <Compile Include="UI\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -148,6 +169,12 @@
     <Content Include="DLL\ERSDataSet.xsc">
       <DependentUpon>ERSDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="css\bootstrap-grid.css.map" />
+    <Content Include="css\bootstrap-grid.min.css.map" />
+    <Content Include="css\bootstrap-reboot.css.map" />
+    <Content Include="css\bootstrap-reboot.min.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="css\bootstrap.min.css.map" />
     <None Include="DLL\ERSDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -156,7 +183,13 @@
     <Content Include="DLL\ERSDataSet.xss">
       <DependentUpon>ERSDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="js\bootstrap.bundle.js.map" />
+    <Content Include="js\bootstrap.bundle.min.js.map" />
+    <Content Include="js\bootstrap.js.map" />
+    <Content Include="js\bootstrap.min.js.map" />
+    <Content Include="js\popper.min.js.map" />
     <None Include="packages.config" />
+    <Content Include="UI\Site.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

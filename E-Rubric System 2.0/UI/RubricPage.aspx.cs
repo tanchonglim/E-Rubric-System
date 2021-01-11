@@ -32,19 +32,18 @@ namespace E_Rubric_System.UI
                 tc3.Text = rubric.RubricType;
                 tr.Cells.Add(tc3);
 
-
                 TableCell tc2 = new TableCell();
                 Button btn = new Button();
                 btn.Text = "View";
                 btn.Click += gotoRubricDetailPage;
                 btn.CommandName = rubric.rubricID.ToString();
+                btn.CssClass = "btn btn-outline-success";
                 tc2.Controls.Add(btn);
 
                 tr.Cells.Add(tc2);
 
                 tblRubrics.Rows.Add(tr);
 
-               
             }
 
 

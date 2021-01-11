@@ -47,6 +47,8 @@ namespace E_Rubric_System.BLL
                 txtBoxCriteria.TextMode = TextBoxMode.MultiLine;
                 txtBoxCriteria.Attributes.Add("placeholder", "type something");
                 txtBoxCriteria.Text = this.Criteria.Split('|')[i];
+                txtBoxCriteria.Height = Unit.Pixel(250);
+                txtBoxCriteria.CssClass = "form-control";
                 criteriaCell.Controls.Add(txtBoxCriteria);
                 tr.Cells.Add(criteriaCell);
 
@@ -58,6 +60,8 @@ namespace E_Rubric_System.BLL
                 txtBox1.TextMode = TextBoxMode.MultiLine;
                 txtBox1.Attributes.Add("placeholder", "type something");
                 txtBox1.Text = Excellent.Split('|')[i];
+                txtBox1.Height = Unit.Pixel(250);
+                txtBox1.CssClass = "form-control";
                 cells[0].Controls.Add(txtBox1);
                 tr.Cells.Add(cells[0]);
 
@@ -66,6 +70,8 @@ namespace E_Rubric_System.BLL
                 txtBox2.TextMode = TextBoxMode.MultiLine;
                 txtBox2.Attributes.Add("placeholder", "type something");
                 txtBox2.Text = Good.Split('|')[i];
+                txtBox2.Height = Unit.Pixel(250);
+                txtBox2.CssClass = "form-control";
                 cells[1].Controls.Add(txtBox2);
                 tr.Cells.Add(cells[1]);
 
@@ -74,6 +80,8 @@ namespace E_Rubric_System.BLL
                 txtBox3.TextMode = TextBoxMode.MultiLine;
                 txtBox3.Attributes.Add("placeholder", "type something");
                 txtBox3.Text = Satisfactory.Split('|')[i];
+                txtBox3.Height = Unit.Pixel(250);
+                txtBox3.CssClass = "form-control";
                 cells[2].Controls.Add(txtBox3);
                 tr.Cells.Add(cells[2]);
 
@@ -82,6 +90,8 @@ namespace E_Rubric_System.BLL
                 txtBox4.TextMode = TextBoxMode.MultiLine;
                 txtBox4.Attributes.Add("placeholder", "type something");
                 txtBox4.Text = Fair.Split('|')[i];
+                txtBox4.Height = Unit.Pixel(250);
+                txtBox4.CssClass = "form-control";
                 cells[3].Controls.Add(txtBox4);
                 tr.Cells.Add(cells[3]);
 
@@ -90,6 +100,8 @@ namespace E_Rubric_System.BLL
                 txtBox5.TextMode = TextBoxMode.MultiLine;
                 txtBox5.Attributes.Add("placeholder", "type something");
                 txtBox5.Text = Poor.Split('|')[i];
+                txtBox5.Height = Unit.Pixel(250);
+                txtBox5.CssClass = "form-control";
                 cells[4].Controls.Add(txtBox5);
                 tr.Cells.Add(cells[4]);
 

@@ -408,7 +408,6 @@ D:\Desktop\SCSJ_SEM5\SDA\project\part2\github\E-Rubric System 2.0\obj\Debug\E-Ru
 D:\Desktop\SCSJ_SEM5\SDA\project\part2\github\E-Rubric System 2.0\obj\Debug\E-Rubric System.csproj.CopyComplete
 D:\Desktop\SCSJ_SEM5\SDA\project\part2\github\E-Rubric System 2.0\obj\Debug\E-Rubric System.dll
 D:\Desktop\SCSJ_SEM5\SDA\project\part2\github\E-Rubric System 2.0\obj\Debug\E-Rubric System.pdb
-D:\Desktop\SCSJ_SEM5\SDA\project\part2\github\E-Rubric System 2.0\obj\Debug\E-Rubric System.csprojAssemblyReference.cache
 C:\Users\User\Source\Repos\Project2\E-Rubric-System\E-Rubric System 2.0\obj\Debug\E-Rubric System.csprojAssemblyReference.cache
 C:\Users\User\Source\Repos\Project2\E-Rubric-System\E-Rubric System 2.0\obj\Debug\E-Rubric System.csproj.CoreCompileInputs.cache
 C:\Users\User\Source\Repos\Project2\E-Rubric-System\E-Rubric System 2.0\obj\Debug\E-Rubric System.dll
@@ -468,3 +467,4 @@ C:\Users\User\Source\Repos\Project2\E-Rubric-System\E-Rubric System 2.0\bin\rosl
 C:\Users\User\Source\Repos\Project2\E-Rubric-System\E-Rubric System 2.0\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\User\Source\Repos\Project2\E-Rubric-System\E-Rubric System 2.0\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\User\Source\Repos\Project2\E-Rubric-System\E-Rubric System 2.0\obj\Debug\E-Rubric System.csproj.CopyComplete
+D:\Desktop\SCSJ_SEM5\SDA\project\part2\github\E-Rubric System 2.0\obj\Debug\E-Rubric System.csprojAssemblyReference.cache

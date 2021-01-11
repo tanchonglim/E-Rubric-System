@@ -51,27 +51,30 @@ namespace E_Rubric_System.UI
                 TableCell tc1 = new TableCell();
                 TableCell tc2 = new TableCell();
                 TableCell tc3 = new TableCell();
+                TableCell tc4 = new TableCell();
                 Button btnView = new Button();
                 Button btnSelect = new Button();
                 tc1.Text = rubric.rubricName;
+                tc2.Text = rubric.RubricType;
 
                 btnView.Text = "View";
-                //   btnView.Click += openRubricDetailPage;
+                btnView.CssClass = "btn btn-outline-info";
                 btnView.OnClientClick = "window.open('RubricDetailPage.aspx?rubricID=" + rubric.rubricID.ToString() + "'); return false;";
                 btnView.CommandName = rubric.rubricID.ToString();
 
-
                 btnSelect.Text = "Attach";
+                btnSelect.CssClass = "btn btn-success";
                 btnSelect.Click += attachRubric;
                 btnSelect.CommandName = rubric.rubricID.ToString();
 
                 tr.Cells.Add(tc1);
-
-                tc2.Controls.Add(btnView);
                 tr.Cells.Add(tc2);
 
-                tc3.Controls.Add(btnSelect);
+                tc3.Controls.Add(btnView);
                 tr.Cells.Add(tc3);
+
+                tc4.Controls.Add(btnSelect);
+                tr.Cells.Add(tc4);
 
 
                 tblRubrics.Rows.Add(tr);

@@ -47,6 +47,7 @@ namespace E_Rubric_System.BLL
             txtBox0.Attributes.Add("placeholder", "type something");
             txtBox0.Text = Excellent;
             txtBox0.Height = Unit.Pixel(500);
+            txtBox0.CssClass = "form-control";
             cells[0].Controls.Add(txtBox0);
             tr2.Cells.Add(cells[0]);
 
@@ -56,6 +57,7 @@ namespace E_Rubric_System.BLL
             txtBox1.Attributes.Add("placeholder", "type something");
             txtBox1.Text = Good;
             txtBox1.Height = Unit.Pixel(500);
+            txtBox1.CssClass = "form-control";
             cells[1].Controls.Add(txtBox1);
             tr2.Cells.Add(cells[1]);
 
@@ -65,6 +67,7 @@ namespace E_Rubric_System.BLL
             txtBox2.Attributes.Add("placeholder", "type something");
             txtBox2.Text = Satisfactory;
             txtBox2.Height = Unit.Pixel(500);
+            txtBox2.CssClass = "form-control";
             cells[2].Controls.Add(txtBox2);
             tr2.Cells.Add(cells[2]);
 
@@ -74,6 +77,7 @@ namespace E_Rubric_System.BLL
             txtBox3.Attributes.Add("placeholder", "type something");
             txtBox3.Text = Fair;
             txtBox3.Height = Unit.Pixel(500);
+            txtBox3.CssClass = "form-control";
             cells[3].Controls.Add(txtBox3);
             tr2.Cells.Add(cells[3]);
 
@@ -83,6 +87,7 @@ namespace E_Rubric_System.BLL
             txtBox4.Attributes.Add("placeholder", "type something");
             txtBox4.Text = Poor;
             txtBox4.Height = Unit.Pixel(500);
+            txtBox4.CssClass = "form-control";
             cells[4].Controls.Add(txtBox4);
             tr2.Cells.Add(cells[4]);
 

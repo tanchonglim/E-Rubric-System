@@ -24,15 +24,15 @@ namespace E_Rubric_System.UI
             {
                     dropDownRubricType.SelectedIndex = 1;
                     btnAddRow.Visible = false;
+                    btnRemoveRow.Visible = false;
                     rubricCreator = new HolisticRubricCreator();
             }
                 else
-            {
                 rubricCreator = new AnalyticRubricCreator();
                
-            }
+            
 
-              rubric = rubricCreator.getRubric();
+                rubric = rubricCreator.getRubric();
                 Session.Add("rubric", rubric);
             } else
             {
@@ -103,6 +103,31 @@ namespace E_Rubric_System.UI
             }
            
             
+        }
+
+        protected void btnRemoveRow_Click(object sender, EventArgs e)
+        {
+            if (this.rubric.Criteria.Split('|').Length > 2)
+            {
+                this.rubric.Criteria = this.rubric.Criteria.Substring(0, this.rubric.Criteria.LastIndexOf('|'));
+                this.rubric.Excellent = this.rubric.Excellent.Substring(0, this.rubric.Excellent.LastIndexOf('|'));
+                this.rubric.Good = this.rubric.Good.Substring(0, this.rubric.Good.LastIndexOf('|'));
+                this.rubric.Satisfactory = this.rubric.Satisfactory.Substring(0, this.rubric.Satisfactory.LastIndexOf('|'));
+                this.rubric.Fair = this.rubric.Fair.Substring(0, this.rubric.Fair.LastIndexOf('|'));
+                this.rubric.Poor = this.rubric.Poor.Substring(0, this.rubric.Poor.LastIndexOf('|'));
+
+                Table rubricTable = rubric.getRubricTable();
+
+                TableRowCollection trc = rubricTable.Rows;
+                List<TableRow> row = new List<TableRow>();
+
+                for (int i = 0; i < trc.Count; i++)
+                {
+                    row.Add(trc[i]);
+                }
+                
+                tblRubric.Rows.RemoveAt(tblRubric.Rows.Count-1);
+            }
         }
     }
 }

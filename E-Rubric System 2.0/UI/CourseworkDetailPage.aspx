@@ -1,81 +1,77 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CourseworkDetailPage.aspx.cs" Inherits="E_Rubric_System.UI.CourseworkDetailPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CourseworkDetailPage.aspx.cs" Inherits="E_Rubric_System.UI.CourseworkDetailPage" MasterPageFile="Site.Master" %>
 
-<!DOCTYPE html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="BodyContent" runat="server">
+     <div class="container">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <style>
-        .iconbar {
-            width: 100%;
-            background-color: #59CDFF; 
-            overflow: auto;
-            border: medium solid black;
-            height: 61px;
-        }
-        .hype {
-            float: left; 
-            text-align: center; 
-            width: 30%;
-            padding: 12px 0; 
-            transition: all 0.3s ease; 
-            color: white; 
-            font-size: 30px; 
-            text-decoration: none;
-    	}
-    	#attrubric {
-            height: 50px;
-            width: 160px;
-            background-color: #59CDFF; 
-            font-size: 25px;
-            color:white;
-    	}
+        <br />
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/UI/HomePage.aspx">Home</a></li>
+            <li class="breadcrumb-item"><a href="/UI/CourseworkPage.aspx">Coursework</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Coursework Detail</li>
+          </ol>
+        </nav>
+        <br />
 
-        .table{
-            text-align:center;
-            align-items: center;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div class="iconbar">
-            <asp:HyperLink class="hype" ID="HyperLink1" runat="server" NavigateUrl="~/UI/HomePage.aspx">Home</asp:HyperLink>
-            <asp:HyperLink class="hype" ID="HyperLink2" runat="server" NavigateUrl="~/UI/RubricPage.aspx">Rubric</asp:HyperLink>
-            <asp:HyperLink class="hype" ID="HyperLink3" runat="server" NavigateUrl="~/UI/CourseworkPage.aspx">Coursework</asp:HyperLink>
+         <div class="card text-white bg-info mb-3" >
+            <div class="card-header">
+               <div class="form-group">
+                    Corusework Title: 
+                   <asp:Label ID="lblCourseworkName" runat="server" Text="Coursework Name"></asp:Label>
+                </div>
+            </div>
+           
+            <div class="card-body">
+                <asp:Panel ID="Panel1" runat="server" Height="235px" Width="454px">
+                    <br />
+                    <br />
+                    Due Date:
+                    <asp:Label ID="lblCourseworkDue" runat="server" Text="12/12/2020"></asp:Label>
+                    <br />
+                    <br />
+                    Number of Submission:
+                    <asp:Label ID="lblNoFileSubmission" runat="server" Text="13"></asp:Label>
+                    <br />
+                    <br />
+                    Rubric Attached:
+                    <asp:Label ID="lblRubricAttached" runat="server" Text="None"> </asp:Label> 
+                     <br />
+                     <br />
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rubricListModal">
+                        Change Rubric
+                    </button>
+                </asp:Panel>
+               
+            </div>
         </div>
-        <p>
-            <asp:Label ID="lblCourseworkName" runat="server" Text="SCSJ1234 ASSIGNMENT 1"></asp:Label>
-        </p>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="rubricListModal" tabindex="-1" aria-labelledby="rubricListModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Rubric List</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <asp:Table CssClass="table table-bordered " ID="tblRubrics" runat="server"  >
+                    <asp:TableHeaderRow>
+                        <asp:TableHeaderCell> Rubric Name </asp:TableHeaderCell>
+                        <asp:TableHeaderCell> Rubric Type </asp:TableHeaderCell>
+                        <asp:TableHeaderCell ColumnSpan="2"> Action </asp:TableHeaderCell>
+                    </asp:TableHeaderRow>
+                </asp:Table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
        
-        <asp:Table ID="Table1" runat="server" Height="106px" Width="1000px">
-            <asp:TableRow>
-                <asp:TableCell> 
-                     <asp:Panel ID="Panel1" runat="server" Height="235px" Width="454px">
-                        <br />
-                        <br />
-                        Due Date:
-                        <asp:Label ID="lblCourseworkDue" runat="server" Text="12/12/2020"></asp:Label>
-                        <br />
-                        <br />
-                        Number of Submission:
-                        <asp:Label ID="lblNoFileSubmission" runat="server" Text="13"></asp:Label>
-                        <br />
-                        <br />
-                        Rubric Attached:
-                         <asp:Label ID="lblRubricAttached" runat="server" Text="None"></asp:Label>
-                 </asp:Panel>
-                </asp:TableCell>
-                 <asp:TableCell> 
-                     <asp:Table CssClass="table" ID="tblRubrics" border="1" runat="server"  Width="500px">
-                          <asp:TableHeaderRow>
-                              <asp:TableHeaderCell> Rubric Name </asp:TableHeaderCell>
-                              <asp:TableHeaderCell ColumnSpan="2"> Action </asp:TableHeaderCell>
-                          </asp:TableHeaderRow>
-                     </asp:Table>
-                 </asp:TableCell>
-            </asp:TableRow>
-        </asp:Table>
-    </form>
-</body>
-</html>
+       
+    </div>
+</asp:Content>
