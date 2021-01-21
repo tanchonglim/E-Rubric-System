@@ -32,7 +32,7 @@
             </div>
            
             <div class="card-body">
-                <asp:Table CssClass="table table-hover" ID="tblRubric" runat="server">
+                <asp:Table CssClass="table table-hover text-white" ID="tblRubric" runat="server">
                 </asp:Table>
 
                  <asp:Panel ID="editMode2" runat="server"> 
