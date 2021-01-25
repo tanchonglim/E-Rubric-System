@@ -83,10 +83,14 @@
     <Content Include="js\popper.min.js" />
     <Content Include="UI\CourseworkDetailPage.aspx" />
     <Content Include="UI\CourseworkPage.aspx" />
+    <Content Include="UI\CourseworkSubmissionList.aspx" />
     <Content Include="UI\HomePage.aspx" />
     <Content Include="UI\RubricCreatePage.aspx" />
     <Content Include="UI\RubricDetailPage.aspx" />
     <Content Include="UI\RubricPage.aspx" />
+    <Content Include="UI\StudentCourseworkListPage.aspx" />
+    <Content Include="UI\StudentSubmissionPage.aspx" />
+    <Content Include="UI\CourseworkGradingPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +110,12 @@
     <Compile Include="BLL\RubricCollection.cs" />
     <Compile Include="BLL\RubricHandler.cs" />
     <Compile Include="BLL\RubricIterator.cs" />
+    <Compile Include="BLL\Student.cs" />
+    <Compile Include="BLL\StudentHandler.cs" />
+    <Compile Include="BLL\Submission.cs" />
+    <Compile Include="BLL\SubmissionCollection.cs" />
+    <Compile Include="BLL\SubmissionHandler.cs" />
+    <Compile Include="BLL\SubmissionIterator.cs" />
     <Compile Include="DLL\ERSDataSet.cs">
       <DependentUpon>ERSDataSet.xsd</DependentUpon>
     </Compile>
@@ -128,6 +138,13 @@
     </Compile>
     <Compile Include="UI\CourseworkPage.aspx.designer.cs">
       <DependentUpon>CourseworkPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CourseworkSubmissionList.aspx.cs">
+      <DependentUpon>CourseworkSubmissionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\CourseworkSubmissionList.aspx.designer.cs">
+      <DependentUpon>CourseworkSubmissionList.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -163,6 +180,27 @@
     </Compile>
     <Compile Include="UI\RubricPage.aspx.designer.cs">
       <DependentUpon>RubricPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StudentCourseworkListPage.aspx.cs">
+      <DependentUpon>StudentCourseworkListPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\StudentCourseworkListPage.aspx.designer.cs">
+      <DependentUpon>StudentCourseworkListPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StudentSubmissionPage.aspx.cs">
+      <DependentUpon>StudentSubmissionPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\StudentSubmissionPage.aspx.designer.cs">
+      <DependentUpon>StudentSubmissionPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CourseworkGradingPage.aspx.cs">
+      <DependentUpon>CourseworkGradingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\CourseworkGradingPage.aspx.designer.cs">
+      <DependentUpon>CourseworkGradingPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

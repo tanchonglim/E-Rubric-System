@@ -12,7 +12,7 @@
         </nav>
         <br />
 
-        <h1> Rubric List <asp:Button ID="btnNewRubric" CssClass="btn btn-info" runat="server" OnClick="gotoRubricCreatePage" Text="New Rubric" /> </h1>
+        <h1> Rubric List <asp:Button ID="btnNewRubric" CssClass="btn btn-primary" runat="server" OnClick="gotoRubricCreatePage" Text="New Rubric" /> </h1>
          
         <br />
         <br />

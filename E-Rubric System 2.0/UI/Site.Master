@@ -22,12 +22,31 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav" id="navbar">
+            <div class="navbar-nav" runat="server" id="navbarCC" >
               <a class="nav-item nav-link " href="/UI/HomePage.aspx">Home </a>
               <a class="nav-item nav-link" href="/UI/RubricPage.aspx">Rubric</a>
                <a class="nav-item nav-link" href="/UI/CourseworkPage.aspx">Coursework</a>
             </div>
+            <div class="navbar-nav" runat="server" id="navbarLect" >
+              <a class="nav-item nav-link " href="/UI/HomePage.aspx">Home </a>
+              <a class="nav-item nav-link" href="/UI/CourseworkPage.aspx">Coursework</a>
+            </div>
+            <div class="navbar-nav" runat="server" id="navbarStd" >
+              <a class="nav-item nav-link " href="/UI/HomePage.aspx">Home </a>
+              <a class="nav-item nav-link" href="/UI/StudentCourseworkListPage.aspx">Coursework</a>
+            </div>
           </div>
+             <div class="form-inline my-2 my-lg-0">
+                 <asp:DropDownList CssClass="dropdown" AutoPostBack="true"  ID="dropDownRole" runat="server" OnSelectedIndexChanged="onRoleChange">
+                     <asp:ListItem>Course Coordinator</asp:ListItem>
+                     <asp:ListItem>Lecturer</asp:ListItem>
+                     <asp:ListItem>Student</asp:ListItem>
+                 </asp:DropDownList>
+                 &nbsp;
+                 <asp:DropDownList CssClass="dropdown" AutoPostBack="true"  ID="dropDownStudent" runat="server" OnSelectedIndexChanged="onStudentChange">
+                 
+                 </asp:DropDownList>
+            </div>
         </nav>
         
 

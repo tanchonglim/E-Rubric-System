@@ -11,7 +11,29 @@ namespace E_Rubric_System.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["role"] == null)
+            {
+                Session["role"] = "cc";
+            }
 
+            if (Session["role"].ToString().Equals("cc"))
+            {
+                lectText.Visible = false;
+                ccText.Visible = true;
+                stdText.Visible = false;
+
+            } else if(Session["role"].ToString().Equals("lecturer"))
+            {
+                lectText.Visible = true;
+                ccText.Visible = false;
+                stdText.Visible = false;
+
+            } else
+            {
+                lectText.Visible = false;
+                ccText.Visible = false;
+                stdText.Visible = true;
+            }
         }
 
     }

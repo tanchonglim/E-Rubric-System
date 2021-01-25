@@ -25,7 +25,7 @@
                 <asp:Button ID="btnCreate" CssClass="btn btn-success" runat="server" Text="Create" OnClick="createNewRubric" />
              </div>
          </div>
-        <div class="card text-white bg-info mb-3" >
+        <div class="card border-primary mb-3" >
             <div class="card-header">
                <div class="form-group">
                     <label for="txtRubricTitle"> Rubric Title:</label>
@@ -34,7 +34,7 @@
             </div>
            
             <div class="card-body">
-                <asp:Table  CssClass="table table-hover text-white" ID="tblRubric" runat="server">
+                <asp:Table  CssClass="table " ID="tblRubric" runat="server">
                 </asp:Table>
             
                 <asp:Button CssClass="btn btn-secondary"  ID="btnAddRow" runat="server" OnClick="btnAddRow_Click" Text="Add Row" /> &nbsp; &nbsp;

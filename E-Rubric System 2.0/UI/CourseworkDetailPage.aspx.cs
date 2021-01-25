@@ -105,5 +105,11 @@ namespace E_Rubric_System.UI
         {
 
         }
+
+        protected void btnGrade_Click(object sender, EventArgs e)
+        {
+            var courseworkID = Request.QueryString.Get("courseworkID");
+            Response.Redirect("/UI/CourseworkSubmissionList.aspx?courseworkID="+ courseworkID);
+        }
     }
 }

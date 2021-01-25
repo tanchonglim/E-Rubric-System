@@ -11,34 +11,25 @@ namespace E_Rubric_System.UI
 {
 
 
-    public partial class HomePage
+    public partial class CourseworkSubmissionList
     {
 
         /// <summary>
-        /// ccText control.
+        /// courseworkDetail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ccText;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor courseworkDetail;
 
         /// <summary>
-        /// lectText control.
+        /// tblSubmissions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lectText;
-
-        /// <summary>
-        /// stdText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl stdText;
+        protected global::System.Web.UI.WebControls.Table tblSubmissions;
     }
 }

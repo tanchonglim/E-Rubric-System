@@ -11,70 +11,97 @@ namespace E_Rubric_System.UI
 {
 
 
-    public partial class CourseworkDetailPage
+    public partial class SubmissionDetailPage
     {
 
         /// <summary>
-        /// lblCourseworkName control.
+        /// courseworkDetail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCourseworkName;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor courseworkDetail;
 
         /// <summary>
-        /// btnGrade control.
+        /// courseworkSubmission control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGrade;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor courseworkSubmission;
 
         /// <summary>
-        /// Panel1 control.
+        /// courseworkDue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell courseworkDue;
 
         /// <summary>
-        /// lblCourseworkDue control.
+        /// submissionDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCourseworkDue;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell submissionDate;
 
         /// <summary>
-        /// lblNoFileSubmission control.
+        /// submissionStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNoFileSubmission;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell submissionStatus;
 
         /// <summary>
-        /// lblRubricAttached control.
+        /// marks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRubricAttached;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell marks;
 
         /// <summary>
-        /// tblRubrics control.
+        /// grade control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblRubrics;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell grade;
+
+        /// <summary>
+        /// txtSubmissionText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSubmissionText;
+
+        /// <summary>
+        /// tblGrading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table tblGrading;
+
+        /// <summary>
+        /// btnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }

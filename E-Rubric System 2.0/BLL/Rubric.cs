@@ -34,6 +34,9 @@ namespace E_Rubric_System.BLL
 
 		public abstract void updateRubric(Table table);
 
+		public abstract Table getMarkingRubric();
+		public abstract int getMarks(Table table);
+
 	}//end Rubric
 
 }

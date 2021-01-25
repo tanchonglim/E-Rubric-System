@@ -23,7 +23,7 @@
         
         <br />
 
-        <div class="card text-white bg-info mb-3" >
+        <div class="card border-primary mb-3" >
             <div class="card-header">
                <div class="form-group">
                     <label for="txtRubricTitle"> Rubric Title:</label>
@@ -32,7 +32,7 @@
             </div>
            
             <div class="card-body">
-                <asp:Table CssClass="table table-hover text-white" ID="tblRubric" runat="server">
+                <asp:Table CssClass="table " ID="tblRubric" runat="server">
                 </asp:Table>
 
                  <asp:Panel ID="editMode2" runat="server"> 

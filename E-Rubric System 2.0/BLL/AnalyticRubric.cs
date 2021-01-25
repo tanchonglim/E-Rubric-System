@@ -151,10 +151,107 @@ namespace E_Rubric_System.BLL
                     this.Fair += "|";
                     this.Poor += "|";
                 }
-
             }
-       
-
         }
+
+        override
+        public Table getMarkingRubric()
+        {
+            Table tbl = new Table();
+
+            //add first row (title)
+            TableRow tr1 = new TableRow();
+            TableCell tc1 = null;
+            string[] titles = { "Criteria", "Excellent", "Good", "Satisfactory", "Fair", "Poor" };
+
+            foreach (string title in titles)
+            {
+                tc1 = new TableCell();
+                tc1.Text = title;
+                tr1.Cells.Add(tc1);
+            }
+            tbl.Rows.Add(tr1);
+
+            //add other rows
+            for (int i = 0; i < this.Criteria.Split('|').Length; i++)
+            {
+                TableCell criteriaCell = new TableCell();
+                TableRow tr = new TableRow();
+                
+                criteriaCell.Text = this.Criteria.Split('|')[i];
+                tr.Cells.Add(criteriaCell);
+
+
+                TableCell[] cells = new TableCell[5];
+
+                cells[0] = new TableCell();
+                RadioButton rb0 = new RadioButton();
+                rb0.Text = this.Excellent.Split('|')[i];
+                rb0.GroupName = "radioGroup" + i;
+                rb0.InputAttributes.Add("required", "true");
+                cells[0].Controls.Add(rb0);
+                tr.Cells.Add(cells[0]);
+
+                cells[1] = new TableCell();
+                RadioButton rb1 = new RadioButton();
+                rb1.Text = this.Good.Split('|')[i];
+                rb1.GroupName = "radioGroup" + i;
+                rb1.InputAttributes.Add("required", "true");
+                cells[1].Controls.Add(rb1);
+                tr.Cells.Add(cells[1]);
+
+                cells[2] = new TableCell();
+                RadioButton rb2 = new RadioButton();
+                rb2.Text = this.Satisfactory.Split('|')[i];
+                rb2.GroupName = "radioGroup" + i;
+                rb2.InputAttributes.Add("required", "true");
+                cells[2].Controls.Add(rb2);
+                tr.Cells.Add(cells[2]);
+
+                cells[3] = new TableCell();
+                RadioButton rb3 = new RadioButton();
+                rb3.Text = this.Fair.Split('|')[i];
+                rb3.GroupName = "radioGroup" + i;
+                rb3.InputAttributes.Add("required", "true");
+                cells[3].Controls.Add(rb3);
+                tr.Cells.Add(cells[3]);
+
+                cells[4] = new TableCell();
+                RadioButton rb4 = new RadioButton();
+                rb4.Text = this.Poor.Split('|')[i];
+                rb4.GroupName = "radioGroup" + i;
+                rb4.InputAttributes.Add("required", "true");
+                cells[4].Controls.Add(rb4);
+                tr.Cells.Add(cells[4]);
+
+                tr.Cells.AddRange(cells);
+
+                tbl.Rows.Add(tr);
+            }
+            return tbl;
+        }
+
+        override
+        public int getMarks(Table table)
+        {
+            double marks = 0;
+
+            for(int i=1;i<table.Rows.Count; i++)
+            {
+                for(int j=1;j< table.Rows[i].Cells.Count; j++)
+                {
+                    var cell = table.Rows[i].Cells[j];
+                    if((cell.Controls[0] as RadioButton).Checked)
+                    {
+                        marks += (5-j+1) * 20;
+                    }
+                }
+            }
+
+            marks = marks / (table.Rows.Count - 1);
+
+            return Convert.ToInt32(marks);
+        }
+
     }
 }

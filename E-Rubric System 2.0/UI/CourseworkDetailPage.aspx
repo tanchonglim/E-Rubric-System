@@ -13,18 +13,21 @@
         </nav>
         <br />
 
-         <div class="card text-white bg-info mb-3" >
+
+         <div class="card border-primary mb-3" >
             <div class="card-header">
-               <div class="form-group">
-                    Corusework Title: 
+                 <div class="d-flex justify-content-between">
+                     <div class="form-group">
+                    Coursework Title: 
                    <asp:Label ID="lblCourseworkName" runat="server" Text="Coursework Name"></asp:Label>
                 </div>
+                    <asp:Button CssClass="btn btn-primary" ID="btnGrade" runat="server" Text="View Submissions" OnClick="btnGrade_Click" />
+                  </div>
+               
             </div>
            
             <div class="card-body">
                 <asp:Panel ID="Panel1" runat="server" Height="235px" Width="454px">
-                    <br />
-                    <br />
                     Due Date:
                     <asp:Label ID="lblCourseworkDue" runat="server" Text="12/12/2020"></asp:Label>
                     <br />
