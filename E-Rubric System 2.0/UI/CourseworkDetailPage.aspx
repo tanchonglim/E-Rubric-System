@@ -40,9 +40,11 @@
                     <asp:Label ID="lblRubricAttached" runat="server" Text="None"> </asp:Label> 
                      <br />
                      <br />
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rubricListModal">
+                    <button type="button" runat="server" id="btnChange" class="btn btn-primary" data-toggle="modal" data-target="#rubricListModal">
                         Change Rubric
                     </button>
+                    <asp:Button ID="btnView" CssClass="btn btn-primary" runat="server" Text="View Rubric" OnClick="btnView_Click" />
+                    
                 </asp:Panel>
                
             </div>

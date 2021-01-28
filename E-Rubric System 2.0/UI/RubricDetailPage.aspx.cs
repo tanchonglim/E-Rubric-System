@@ -15,55 +15,63 @@ namespace E_Rubric_System.UI
         Rubric rubric;
         protected void Page_Load(object sender, EventArgs e)
         {
-                viewMode.Visible = true;
-                editMode2.Visible = false;
-                editMode.Visible = false;
-                RubricHandler rh = new RubricHandler();
-                var rubricID = Request.QueryString.Get("rubricID");
-                if (rubricID == null)
-                {
-                    Response.Redirect("RubricPage.aspx");
-                }
+            var viewOnly = Request.QueryString.Get("viewOnly");
 
-                this.rubric = rh.getRubric(Int32.Parse(rubricID));
+            if(viewOnly != null)
+            {
+                btnEdit.Visible = false;
+                navBar.Visible = false;
+            }
+
+            viewMode.Visible = true;
+            editMode2.Visible = false;
+            editMode.Visible = false;
+            RubricHandler rh = new RubricHandler();
+            var rubricID = Request.QueryString.Get("rubricID");
+            if (rubricID == null)
+            {
+                Response.Redirect("RubricPage.aspx");
+            }
+
+            this.rubric = rh.getRubric(Int32.Parse(rubricID));
                 
 
-                if (!IsPostBack)
-                {
-                    txtRubricTitle.Text = rubric.rubricName;
-                    Session.Add("rubric", rubric);
-                } else
-                {
-                    rubric = Session["rubric"] as Rubric;
-                }
+            if (!IsPostBack)
+            {
+                txtRubricTitle.Text = rubric.rubricName;
+                Session.Add("rubric", rubric);
+            } else
+            {
+                rubric = Session["rubric"] as Rubric;
+            }
 
-                Table rubricTable = rubric.getRubricTable();
+            Table rubricTable = rubric.getRubricTable();
 
-                TableRowCollection trc = rubricTable.Rows;
-                List<TableRow> row = new List<TableRow>();
-                for(int i = 0; i < trc.Count; i++)
-                {
-                    row.Add(trc[i]);
-                }
+            TableRowCollection trc = rubricTable.Rows;
+            List<TableRow> row = new List<TableRow>();
+            for(int i = 0; i < trc.Count; i++)
+            {
+                row.Add(trc[i]);
+            }
 
 
-                if (rubric.RubricType.Equals("holistic"))
-                {
-                    btnAddRow.Visible = false;
-                    btnRemoveRow.Visible = false;
-                }
+            if (rubric.RubricType.Equals("holistic"))
+            {
+                btnAddRow.Visible = false;
+                btnRemoveRow.Visible = false;
+            }
 
-                tblRubric.Rows.AddRange(row.ToArray());
+            tblRubric.Rows.AddRange(row.ToArray());
 
-                if (Request.QueryString.Get("mode")!= null && Request.QueryString.Get("mode").Equals("edit"))
-                {
-                    this.enableEditMode();
+            if (Request.QueryString.Get("mode")!= null && Request.QueryString.Get("mode").Equals("edit"))
+            {
+                this.enableEditMode();
                
-                }
-                else
-                {
-                    this.enableViewMode();
-                }
+            }
+            else
+            {
+                this.enableViewMode();
+            }
            
 
         }

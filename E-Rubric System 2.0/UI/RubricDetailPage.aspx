@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="BodyContent" runat="server">
     <div class="container"> 
         <br />
-        <nav aria-label="breadcrumb">
+        <nav runat="server" id="navBar" aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/UI/HomePage.aspx">Home</a></li>
             <li class="breadcrumb-item"><a href="/UI/RubricPage.aspx">Rubric</a></li>

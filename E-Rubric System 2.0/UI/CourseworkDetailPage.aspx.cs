@@ -12,28 +12,41 @@ namespace E_Rubric_System.UI
 {
     public partial class CourseworkDetailPage : System.Web.UI.Page
     {
+        Rubric rubric;
         protected void Page_Load(object sender, EventArgs e)
         {
-                var courseworkID = Request.QueryString.Get("courseworkID");
-                if (courseworkID == null)
-                {
-                    Response.Redirect("CourseworkPage.aspx");
-                }
+            var courseworkID = Request.QueryString.Get("courseworkID");
+            if (courseworkID == null)
+            {
+                Response.Redirect("CourseworkPage.aspx");
+            }
+
+            if (Session["role"].ToString().Equals("cc"))
+            {
+                btnChange.Visible = true;
+                btnView.Visible = false;
+            } else
+            {
+                btnChange.Visible = false;
+                btnView.Visible = true;
+            }
+
             
-                CourseworkHandler ch = new CourseworkHandler();
-                RubricHandler rh = new RubricHandler();
-                Coursework coursework = ch.getCoursework(int.Parse(courseworkID));
+            CourseworkHandler ch = new CourseworkHandler();
+            RubricHandler rh = new RubricHandler();
+            Coursework coursework = ch.getCoursework(int.Parse(courseworkID));
 
-                lblCourseworkName.Text = coursework.getCourseworkName();
-                lblNoFileSubmission.Text = coursework.getNoFileSubmit().ToString();
-                lblCourseworkDue.Text = coursework.getDueDate().ToString();
+            lblCourseworkName.Text = coursework.getCourseworkName();
+            lblNoFileSubmission.Text = coursework.getNoFileSubmit().ToString();
+            lblCourseworkDue.Text = coursework.getDueDate().ToString();
 
-                if (coursework.getRubricID() != -1)
-                {
-                    Rubric rubric = rh.getRubric(coursework.getRubricID());
-                    lblRubricAttached.Text = rubric.rubricName;
-                }
-                 initRubricList();
+            if (coursework.getRubricID() != -1)
+            {
+                rubric = rh.getRubric(coursework.getRubricID());
+                lblRubricAttached.Text = rubric.rubricName;
+                btnView.OnClientClick = "window.open('RubricDetailPage.aspx?rubricID=" + rubric.rubricID.ToString() + "&viewOnly=true'); return false;";
+            }
+                initRubricList();
         }
 
         protected void initRubricList()
@@ -59,7 +72,7 @@ namespace E_Rubric_System.UI
 
                 btnView.Text = "View";
                 btnView.CssClass = "btn btn-outline-info";
-                btnView.OnClientClick = "window.open('RubricDetailPage.aspx?rubricID=" + rubric.rubricID.ToString() + "'); return false;";
+                btnView.OnClientClick = "window.open('RubricDetailPage.aspx?rubricID=" + rubric.rubricID.ToString() + "&viewOnly=true'); return false;";
                 btnView.CommandName = rubric.rubricID.ToString();
 
                 btnSelect.Text = "Attach";
@@ -86,9 +99,7 @@ namespace E_Rubric_System.UI
         {
             Button btn = (Button)sender;
             var rubricID = btn.CommandName;
-            //  Response.Write("window.open('RubricDetailPage.aspx?rubricID=" + rubricID + "')");
-            // ClientScript.RegisterStartupScript(this.Page.GetType(), "", "window.open('RubricDetailPage.aspx');", true);
-        }
+         }
 
         protected void attachRubric(object sender, EventArgs e)
         {
@@ -110,6 +121,11 @@ namespace E_Rubric_System.UI
         {
             var courseworkID = Request.QueryString.Get("courseworkID");
             Response.Redirect("/UI/CourseworkSubmissionList.aspx?courseworkID="+ courseworkID);
+        }
+
+        protected void btnView_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
