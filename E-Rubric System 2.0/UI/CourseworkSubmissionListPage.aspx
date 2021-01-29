@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CourseworkSubmissionList.aspx.cs" Inherits="E_Rubric_System.UI.CourseworkSubmissionList" MasterPageFile="Site.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CourseworkSubmissionListPage.aspx.cs" Inherits="E_Rubric_System.UI.CourseworkSubmissionList" MasterPageFile="Site.Master" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="BodyContent" runat="server">
    

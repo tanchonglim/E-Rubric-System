@@ -83,7 +83,7 @@
     <Content Include="js\popper.min.js" />
     <Content Include="UI\CourseworkDetailPage.aspx" />
     <Content Include="UI\CourseworkPage.aspx" />
-    <Content Include="UI\CourseworkSubmissionList.aspx" />
+    <Content Include="UI\CourseworkSubmissionListPage.aspx" />
     <Content Include="UI\HomePage.aspx" />
     <Content Include="UI\RubricCreatePage.aspx" />
     <Content Include="UI\RubricDetailPage.aspx" />
@@ -139,12 +139,12 @@
     <Compile Include="UI\CourseworkPage.aspx.designer.cs">
       <DependentUpon>CourseworkPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UI\CourseworkSubmissionList.aspx.cs">
-      <DependentUpon>CourseworkSubmissionList.aspx</DependentUpon>
+    <Compile Include="UI\CourseworkSubmissionListPage.aspx.cs">
+      <DependentUpon>CourseworkSubmissionListPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UI\CourseworkSubmissionList.aspx.designer.cs">
-      <DependentUpon>CourseworkSubmissionList.aspx</DependentUpon>
+    <Compile Include="UI\CourseworkSubmissionListPage.aspx.designer.cs">
+      <DependentUpon>CourseworkSubmissionListPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

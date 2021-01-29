@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CourseworkGradingPage.aspx.cs" Inherits="E_Rubric_System.UI.SubmissionDetailPage"  MasterPageFile="Site.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CourseworkGradingPage.aspx.cs" Inherits="E_Rubric_System.UI.CourseworkGradingPage"  MasterPageFile="Site.Master" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="BodyContent" runat="server">
@@ -53,7 +53,7 @@
                     <asp:Table CssClass="table table-bordered" ID="tblGrading" runat="server"> 
                         
                     </asp:Table>
-                      <asp:Button ID="btnSubmit" CssClass="btn btn-primary" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+                      <asp:Button ID="btnSubmit" CssClass="btn btn-primary" runat="server" Text="Submit" OnClick="btnGrade_Click" />
                   </div>
                 </div>
                  

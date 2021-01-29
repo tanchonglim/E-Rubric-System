@@ -9,7 +9,7 @@ using E_Rubric_System.BLL;
 
 namespace E_Rubric_System.UI
 {
-    public partial class SubmissionDetailPage : System.Web.UI.Page
+    public partial class CourseworkGradingPage : System.Web.UI.Page
     {
         Rubric rubric;
         Submission submission;
@@ -63,7 +63,7 @@ namespace E_Rubric_System.UI
 
         }
 
-        protected void btnSubmit_Click(object sender, EventArgs e)
+        protected void btnGrade_Click(object sender, EventArgs e)
         {
             var submissionID = Request.QueryString.Get("submissionID");
             var marks = rubric.getMarks(tblGrading);
@@ -72,7 +72,7 @@ namespace E_Rubric_System.UI
             int lateDays = (submission.SubmissionDate - coursework.getDueDate()).Days;
             if (lateDays > 0)
             {
-                marks -= lateDays * 5;
+                marks -=  5;
             }
 
             if (marks < 0) marks = 0;

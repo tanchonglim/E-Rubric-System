@@ -25,6 +25,7 @@ namespace E_Rubric_System.UI
             {
                 btnChange.Visible = true;
                 btnView.Visible = false;
+                btnGrade.Visible = false;
             } else
             {
                 btnChange.Visible = false;
@@ -112,15 +113,10 @@ namespace E_Rubric_System.UI
             Response.Redirect(Page.Request.RawUrl);
         }
 
-        protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
-        {
-
-        }
-
         protected void btnGrade_Click(object sender, EventArgs e)
         {
             var courseworkID = Request.QueryString.Get("courseworkID");
-            Response.Redirect("/UI/CourseworkSubmissionList.aspx?courseworkID="+ courseworkID);
+            Response.Redirect("/UI/CourseworkSubmissionListPage.aspx?courseworkID="+ courseworkID);
         }
 
         protected void btnView_Click(object sender, EventArgs e)

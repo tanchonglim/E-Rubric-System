@@ -11,7 +11,7 @@ namespace E_Rubric_System.UI
 {
 
 
-    public partial class SubmissionDetailPage
+    public partial class CourseworkGradingPage
     {
 
         /// <summary>
