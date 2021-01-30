@@ -34,5 +34,74 @@ namespace E_Rubric_System.BLL
             Grade = grade;
             IsLate = isLate;
         }
+
+        public void calcGrade(int marks, DateTime dueDate)
+        {
+            //if late, deduct 5 marks
+            if ((this.SubmissionDate - dueDate).Days > 0)
+            {
+                marks -= 5;
+            }
+
+            if (marks < 0) marks = 0;
+
+            string grade;
+
+            if (marks >= 90)
+            {
+                grade = "A+";
+            }
+            else if (marks >= 80)
+            {
+                grade = "A";
+            }
+            else if (marks >= 75)
+            {
+                grade = "A-";
+            }
+            else if (marks >= 70)
+            {
+                grade = "B+";
+            }
+            else if (marks >= 65)
+            {
+                grade = "B";
+            }
+            else if (marks >= 60)
+            {
+                grade = "B-";
+            }
+            else if (marks >= 55)
+            {
+                grade = "C+";
+            }
+            else if (marks >= 50)
+            {
+                grade = "C";
+            }
+            else if (marks >= 45)
+            {
+                grade = "C-";
+            }
+            else if (marks >= 40)
+            {
+                grade = "D+";
+            }
+            else if (marks >= 35)
+            {
+                grade = "D";
+            }
+            else if (marks >= 30)
+            {
+                grade = "D-";
+            }
+            else
+            {
+                grade = "E";
+            }
+
+            this.Marks = marks;
+            this.Grade = grade;
+        }
     }
 }

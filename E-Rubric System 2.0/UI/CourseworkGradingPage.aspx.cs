@@ -68,70 +68,13 @@ namespace E_Rubric_System.UI
             var submissionID = Request.QueryString.Get("submissionID");
             var marks = rubric.getMarks(tblGrading);
 
-            //if late, auto deduct marks
-            int lateDays = (submission.SubmissionDate - coursework.getDueDate()).Days;
-            if (lateDays > 0)
-            {
-                marks -=  5;
-            }
+            submission.calcGrade(marks, coursework.getDueDate());
 
-            if (marks < 0) marks = 0;
-
-            string grade;
-            if (marks >= 90)
-            {
-                grade = "A+";
-            } else if (marks >= 80)
-            {
-                grade = "A";
-            }
-            else if (marks >= 75)
-            {
-                grade = "A-";
-            }
-            else if (marks >= 70)
-            {
-                grade = "B+";
-            }
-            else if (marks >= 65)
-            {
-                grade = "B";
-            }
-            else if (marks >= 60)
-            {
-                grade = "B-";
-            }
-            else if (marks >= 55)
-            {
-                grade = "C+";
-            }
-            else if (marks >= 50)
-            {
-                grade = "C";
-            }
-            else if (marks >= 45)
-            {
-                grade = "C-";
-            }
-            else if (marks >= 40)
-            {
-                grade = "D+";
-            }
-            else if (marks >= 35)
-            {
-                grade = "D";
-            }
-            else if (marks >= 30)
-            {
-                grade = "D-";
-            } else
-            {
-                grade = "E";
-            }
-
+            int finalMarks = submission.Marks;
+            string grade = submission.Grade;
 
             SubmissionHandler sh = new SubmissionHandler();
-            sh.gradeSubmission(marks, grade, Int32.Parse(submissionID));
+            sh.gradeSubmission(finalMarks, grade, Int32.Parse(submissionID));
             Response.Redirect(Request.RawUrl);
         }
     }
