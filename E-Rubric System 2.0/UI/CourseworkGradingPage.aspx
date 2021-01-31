@@ -11,7 +11,7 @@
             <li class="breadcrumb-item"><a href="/UI/HomePage.aspx">Home</a></li>
             <li class="breadcrumb-item"><a href="/UI/CourseworkPage.aspx">Coursework</a></li>
             <li class="breadcrumb-item"><a runat="server" id="courseworkDetail" href="/UI/CourseworkDetailPage.aspx">Coursework Detail</a></li>
-            <li class="breadcrumb-item"><a runat="server" id="courseworkSubmission" href="/UI/CourseworkSubmissionList.aspx">Coursework Submission List</a></li>
+            <li class="breadcrumb-item"><a runat="server" id="courseworkSubmission" href="/UI/CourseworkSubmissionListPage.aspx">Coursework Submission List</a></li>
             <li class="breadcrumb-item active" aria-current="page">Submission Grading</li>
           </ol>
         </nav>
