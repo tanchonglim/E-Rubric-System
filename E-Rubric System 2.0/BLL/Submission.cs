@@ -38,7 +38,7 @@ namespace E_Rubric_System.BLL
         public void calcGrade(int marks, DateTime dueDate)
         {
             //if late, deduct 5 marks
-            if ((this.SubmissionDate - dueDate).Days > 0)
+            if ((this.SubmissionDate - dueDate).TotalDays > 0)
             {
                 marks -= 5;
             }
